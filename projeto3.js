@@ -19,7 +19,7 @@ var players = [];
 for (let i = 0; i < playerNumber; i++) {
   do {
     var nome = prompt(`Qual o nome do jogador ${i + 1}?`);
-  } while (nome == null||nome=='');
+  } while (nome == null || nome == "");
   players.push({ nome });
   players[i].jogada = [];
   players[i].vitorias = 0;
@@ -27,9 +27,15 @@ for (let i = 0; i < playerNumber; i++) {
 for (let j = 0; j < rounds; j++) {
   let rodada = [];
   for (let i = 0; i < players.length; i++) {
-    do{
-        var p1 = prompt(`Jogar dado jogador ${i + 1} ?`);
-    }while(p1=='n'||p1=='nao'||p1=='not'||p1=='0'||p1=='no');
+    do {
+      var p1 = prompt(`Jogar dado jogador ${i + 1} ?`);
+    } while (
+      p1 == "n" ||
+      p1 == "nao" ||
+      p1 == "not" ||
+      p1 == "0" ||
+      p1 == "no"
+    );
     let dado = Math.ceil(Math.random() * 6);
     console.log("dado", dado);
     players[i].jogada.push(dado);
