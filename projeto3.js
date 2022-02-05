@@ -27,7 +27,9 @@ for (let i = 0; i < playerNumber; i++) {
 for (let j = 0; j < rounds; j++) {
   let rodada = [];
   for (let i = 0; i < players.length; i++) {
-    let p1 = prompt(`Jogar dado jogador ${i + 1} ?`);
+    do{
+        let p1 = prompt(`Jogar dado jogador ${i + 1} ?`);
+    }while(p1=='n'||p1=='nao'||p1=='not'||p1=='0'||p1=='no');
     let dado = Math.ceil(Math.random() * 6);
     console.log("dado", dado);
     players[i].jogada.push(dado);
